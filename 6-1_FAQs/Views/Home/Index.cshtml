@@ -1,0 +1,52 @@
+﻿@model IEnumerable<_6_1_FAQs.Models.FAQ>
+
+@* Kenny Hedlund - Chapter 6 FAQ App *@
+
+@* Displays the FAQ list with topic and category filtering options *@
+<div class="row">
+    <!-- Sidebar for Category Filtering -->
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item bg-light"><strong>Categories</strong></li>
+            <li class="list-group-item">
+                <a asp-action="Index" asp-route-category="">All Categories</a>
+            </li>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <li class="list-group-item">
+                    <a asp-action="Index" asp-route-category="@category.Id">@category.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9">
+        <nav class="mb-3">
+            <a asp-action="Index" asp-route-topic="" class="btn btn-link">All FAQs</a>
+            @foreach (var topic in ViewBag.Topics)
+            {
+                <a asp-action="Index" asp-route-topic="@topic.Id" class="btn btn-link">@topic.Name</a>
+            }
+        </nav>
+
+        @if (Model.Any())
+        {
+            @foreach (var faq in Model)
+            {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@faq.Question</h5>
+                        <p class="card-text">@faq.Answer</p>
+                        <p class="text-muted">Topic: @faq.Topic.Name | Category: @faq.Category.Name</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <!-- Not necessary - good practice -->
+            <p>No FAQs match the selected filters.</p>
+        }
+    </div>
+</div>

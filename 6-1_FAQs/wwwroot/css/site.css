@@ -1,0 +1,77 @@
+/* Kenny Hedlund */
+/* Chapter 6 FAQ App */
+
+/* Setting default font size */
+html {
+  font-size: 14px;
+}
+
+/* Adjusts the font size to 16px for larger width viewports. */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Focus styles for interactive elements - Adds white and blue outlines for focus accessibility. */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* make HTML element span the full height of the viewport and positioning */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Adds space at the bottom of body for footer - not utilized */
+body {
+  margin-bottom: 60px;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa; /* Bootstrap light background */
+    padding: 1rem 0;
+    color: #6c757d; /* Bootstrap muted text */
+}
+
+/* Sidebar Styles */
+.list-group-item {
+    border: none;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-weight: bold;
+}
